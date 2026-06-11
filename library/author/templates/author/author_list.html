@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список авторів</title>
+</head>
+<body>
+    <h2>Список авторів</h2>
+
+    <ul>
+        {% for author in authors %}
+            <li>
+                ID: {{ author.id }} | {{ author.name }} {{ author.surname }} {{ author.patronymic }}
+            </li>
+        {% empty %}
+            <li>Авторів поки немає в базі.</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
