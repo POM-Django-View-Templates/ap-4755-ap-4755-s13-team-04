@@ -10,22 +10,17 @@
     </style>
 </head>
 <body>
-    <h1>Список авторів</h1>
+    <h1>Список користувачів</h1>
     <table>
+        <tr><th>ID</th><th>Email</th><th>Ім'я</th><th>Прізвище</th></tr>
+        {% for user in users %}
         <tr>
-            <th>ID</th>
-            <th>Ім'я</th>
-            <th>Прізвище</th>
-        </tr>
-        {% for author in authors %}
-        <tr>
-            <td>{{ author.id }}</td>
-            <td>{{ author.name }}</td>
-            <td>{{ author.surname }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
         </tr>
         {% endfor %}
     </table>
-    <br>
-    <a href="/" style="color: #88aaff;">На головну</a>
 </body>
 </html>

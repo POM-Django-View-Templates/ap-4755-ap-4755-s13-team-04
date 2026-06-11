@@ -10,22 +10,17 @@
     </style>
 </head>
 <body>
-    <h1>Список авторів</h1>
+    <h1>Усі замовлення</h1>
     <table>
+        <tr><th>ID</th><th>Користувач</th><th>Книга</th><th>Дата</th></tr>
+        {% for order in orders %}
         <tr>
-            <th>ID</th>
-            <th>Ім'я</th>
-            <th>Прізвище</th>
-        </tr>
-        {% for author in authors %}
-        <tr>
-            <td>{{ author.id }}</td>
-            <td>{{ author.name }}</td>
-            <td>{{ author.surname }}</td>
+            <td>{{ order.id }}</td>
+            <td>{{ order.user.id }}</td>
+            <td>{{ order.book.id }}</td>
+            <td>{{ order.created_at|date:"d.m.Y" }}</td>
         </tr>
         {% endfor %}
     </table>
-    <br>
-    <a href="/" style="color: #88aaff;">На головну</a>
 </body>
 </html>
