@@ -13,6 +13,11 @@
         {% for author in authors %}
             <li>
                 ID: {{ author.id }} | {{ author.name }} {{ author.surname }} {{ author.patronymic }}
+                
+                <form method="POST" action="{% url 'delete_author' author.id %}" style="display:inline; margin-left: 10px;">
+                    {% csrf_token %}
+                    <button type="submit" style="color: red;">Видалити</button>
+                </form>
             </li>
         {% empty %}
             <li>Авторів поки немає в базі.</li>
