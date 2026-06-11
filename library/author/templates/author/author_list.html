@@ -7,6 +7,8 @@
 <body>
     <h2>Список авторів</h2>
 
+    <a href="{% url 'create_author' %}"><button>+ Додати автора</button></a><br><br>
+
     <ul>
         {% for author in authors %}
             <li>
